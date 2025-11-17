@@ -32,7 +32,7 @@ body {
 
     animation:forwards appear 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 html,body, form {
@@ -51,8 +51,6 @@ body * {
 }
 
 .modelContainerDiv {
-    width: 100%;
-
     display: flex;
     flex-direction: row;
 
