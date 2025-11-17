@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz Druku 3D</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 class="greeting">Witamy! Chcesz coś wydrukowanego? Wyślij to nam tu!</h1>
+
+    <form method="post">
+        <div class="modelContainerDiv">
+            <div class="modelDiv">
+                <h3>Podaj link do modelu</h3>
+                <input type="text" placeholder="Makerworld.com/...">
+
+                <h3>Z jakich stron polecamy? W kolejności:</h3>
+
+                <ol>
+                    <li><a target="_blank" href="https://makerworld.com">Makerworld</a></li>
+                    <li><a target="_blank" href="https://printables.com">Printables</a></li>
+                    <li><a target="_blank" href="https://thingiverse.com">Thingiverse</a></li>
+                </ol>
+            </div>
+
+            <h3 class="lub">lub</h3>
+
+            <div class="modelDiv">
+                <h3>Wyślij plik modelu 3D</h3>
+                <input type="file" multiple>
+
+                <h4>Polecane formaty:</h4>
+
+                <h5>.stl, .step, .3mf</h5>
+                <h5>Ale akceptujemy wszystkie :D</h5>
+            </div>
+        </div>
+
+        <div class="modelContainerDiv">
+            <div class="modelDiv">
+                <h3>Nie mamy wszystkich 256³ kolorów...</h3>
+                <h3>Oprócz tych!</h3>
+
+                <fieldset class="colorPicker">
+                    <legend>Wybierz kolor(y) z jakich chcesz druk!</legend>
+
+                    <input type="checkbox" color="red">
+                    <input type="checkbox" color="green">
+                    <input type="checkbox" color="blue">
+                    <input type="checkbox" color="black">
+                </fieldset>
+            </div>
+
+            <div class="modelDiv">
+                <h3>Trzeba cię rozpoznać!</h3>
+                <h3>Podaj salę i opcjonalnie imię.</h3>
+                <input type="text" style="resize: both;" placeholder="Grzegorz Brzęczyszczykiewicz sala 2137">
+                
+                <h3>I pozostaw opcjonalną notatkę :)</h3>
+                <input type="text" style="resize: both;" placeholder="Baza ma być czerwona..." re>
+            </div>
+        </div>
+
+        <button type="submit">Wyślij do druku!</button>
+    </form>
+
+    <button style="width: fit-content"><a href="">Zobacz wszystkie trwające druki</a></button>
+
+    <h3>Fun fact ta strony chodzi na Raspberry pi, chodż spojrzeć i zawitać w sali 105 :P</h3>
+</body>
+
+<div class="background">
+
+</div>
+ 
+</html>

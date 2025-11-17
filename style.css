@@ -1,0 +1,210 @@
+@keyframes appear {
+  0% {
+    width: 0vw;
+    rotate: 90deg;
+  }
+  100% {
+    width: 100vw;
+    rotate: 0deg;
+  }
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    transition: 0.2s ease-out;
+}
+
+form {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+
+    background-color: black;
+
+    margin: 0;
+
+    width: 0vw;
+
+    animation:forwards appear 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    overflow: hidden;
+}
+
+html,body, form {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+body * {
+    text-wrap: nowrap;
+}
+
+.greeting {
+    color: rgb(255, 255, 255);
+}
+
+.modelContainerDiv {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content:center;
+}
+
+input, button {
+    margin-top: 25px;
+}
+
+.modelDiv {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: space-evenly;
+
+    input[type="checkbox"] {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+
+        accent-color: attr(color);
+    }
+
+    input[type="checkbox"]:hover {
+    width: 110%;
+
+    cursor: pointer;
+    }
+
+    input[type="checkbox"]:checked {
+        width: 125%;
+    }
+}
+
+div > * {
+    margin: 15px;
+}
+
+div > input {
+    margin: 0;
+}
+
+label {
+    margin: 0;
+    color: rgb(236, 236, 236);
+}
+
+a {
+    color: #00ffff;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #87ffff;
+    text-decoration: none;
+
+    margin: 15px;
+}
+
+a::before {
+    content: "";
+}
+
+a:hover > a::before {
+    content: ">";
+}
+
+input, button {
+    color: rgb(255, 255, 255);
+    background-color: black;
+}
+
+button {
+    width: 125px;
+    height: 25px;
+    font-weight: bolder;
+    text-wrap: nowrap;
+    text-align: center;
+}
+
+button:hover {
+    cursor: pointer;
+
+    width: calc(fit-content + 25px);
+    height: 25px;
+}
+
+.modelDiv, button {
+    background-color: #55555541;
+    border-radius: 25px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+}
+
+.modelDiv {
+    ol li {
+        text-align: left;
+    }
+
+    h4 {
+        margin-bottom: 0;
+    }
+
+    h5 {
+        margin: 0;
+        color: rgb(235, 235, 235);}
+}
+
+.lub {
+    align-self: center;
+}
+
+@keyframes slide {
+  0% {
+    background-position: 0vw 0vh;
+  }
+  100% {
+    background-position: 100vw 100vh;
+  }
+}
+
+.background {
+    width: 100vw;
+    height: 100vh;
+
+    background-image: url(hackathon-tlo-przezroczyste.png);
+    background-repeat: repeat;
+    background-size: contain;
+
+    animation: slide 30s linear infinite;
+    overflow: hidden;
+    
+    position:absolute;
+
+    z-index: -999;
+
+    filter: brightness(1);
+}
+
+.modelDiv, button {
+    backdrop-filter: blur(5px) brightness(2) hue-rotate(45deg);
+}
