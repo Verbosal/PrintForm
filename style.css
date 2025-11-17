@@ -186,8 +186,8 @@ button:hover {
 }
 
 .background {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
 
     background-image: url(wallpaper.png);
     background-repeat: repeat;
@@ -195,8 +195,7 @@ button:hover {
 
     animation: slide 30s linear infinite;
     overflow: hidden;
-    
-    position:absolute;
+
 
     z-index: -999;
 
