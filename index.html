@@ -12,11 +12,11 @@
 <body class="background">
     <h1 class="greeting">Witamy! Chcesz coś wydrukowanego? Wyślij to nam tu!</h1>
 
-    <form method="post">
+    <form method="post" action="addData.php">
         <div class="modelContainerDiv">
             <div class="modelDiv">
                 <h3>Podaj link do modelu</h3>
-                <input type="text" placeholder="Makerworld.com/...">
+                <input type="text" placeholder="makerworld.com/..." name="link">
 
                 <h3>Z jakich stron polecamy? W kolejności:</h3>
 
@@ -31,12 +31,13 @@
 
             <div class="modelDiv">
                 <h3>Wyślij plik modelu 3D</h3>
-                <input type="file" multiple>
+                <input type="file" multiple name="fname">
 
                 <h4>Polecane formaty:</h4>
 
                 <h5>.stl, .step, .3mf</h5>
                 <h5>Ale akceptujemy wszystkie :D</h5>
+                <h5>(oczywiście plik musi zawierać prawidłowy model 3d!)</h5>
             </div>
         </div>
 
@@ -58,10 +59,10 @@
             <div class="modelDiv">
                 <h3>Trzeba cię rozpoznać!</h3>
                 <h3>Podaj salę i opcjonalnie imię.</h3>
-                <input type="text" style="resize: both;" placeholder="Grzegorz Brzęczyszczykiewicz sala 2137">
+                <input type="text" style="resize: both;" placeholder="Grzegorz Brzęczyszczykiewicz sala 2137" name="sender" required>
                 
                 <h3>I pozostaw opcjonalną notatkę :)</h3>
-                <input type="text" style="resize: both;" placeholder="Baza ma być czerwona..." re>
+                <input type="text" style="resize: both;" placeholder="Baza ma być czerwona..." name="note">
             </div>
         </div>
 
