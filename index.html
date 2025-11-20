@@ -12,7 +12,7 @@
 <body class="background">
     <h1 class="greeting">Witamy! Chcesz coś wydrukowanego? Wyślij to nam tu!</h1>
 
-    <form method="post" action="addData.php">
+    <form method="post" action="addData.php" enctype="multipart/form-data">
         <div class="modelContainerDiv">
             <div class="modelDiv">
                 <h3>Podaj link do modelu</h3>
@@ -31,7 +31,7 @@
 
             <div class="modelDiv">
                 <h3>Wyślij plik modelu 3D</h3>
-                <input type="file" multiple name="fname">
+                <input type="file" multiple name="fname" id="fname">
 
                 <h4>Polecane formaty:</h4>
 
