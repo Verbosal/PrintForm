@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['sender'])){
+if(isset($_POST['sender']) && isset($_POST['dcname'])){
     require_once 'database.php';
 
     $newFNAME = "";
@@ -26,7 +26,7 @@ if(isset($_POST['sender'])){
         }
 
         if($imageFileType != "stl" && $imageFileType != "step" && $imageFileType != "3mf"
-        && $imageFileType != "obj" ) {
+        && $imageFileType != "obj" && $imageFileType != "svg" ) {
             echo "Typ pliku sie nie zgadza";echo '<br> <a href="index.html"> Powrót </a>';
             $uploadOk = 0;
             exit();
@@ -43,13 +43,14 @@ if(isset($_POST['sender'])){
         }
     }
 
-    $query = $db->prepare('INSERT INTO druki VALUES (NULL, :link, :sender, :note, :fname, :colors)');
+    $query = $db->prepare('INSERT INTO druki VALUES (NULL, :link, :sender, :note, :fname, :colors, :dcname)');
     $query->bindValue(':link',$_POST['link'],PDO::PARAM_STR);
     $query->bindValue(':sender',$_POST['sender'],PDO::PARAM_STR);
     $query->bindValue(':note',$_POST['note'],PDO::PARAM_STR);
     $query->bindValue(':fname',$newFNAME,PDO::PARAM_STR);
     //$query->bindValue(':colors',$_POST['???'],PDO::PARAM_STR); czekam jak zrobisz kolorki
     $query->bindValue(':colors',"none",PDO::PARAM_STR);
+    $query->bindValue(':dcname',$_POST['dcname'],PDO::PARAM_STR);
     $query->execute();
     echo "Plik wysłany do druku <br>";
 }

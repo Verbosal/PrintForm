@@ -5,7 +5,7 @@ $prints=$printsQuery->fetchAll(PDO::FETCH_ASSOC);
 
 echo("<table>");
 
-echo("<tr><th>Link</th><th>Imię</th><th>Notatka</th><th>Nazwa pliku</th><th>Kolory</th></tr>");
+echo("<tr><th>Link</th><th>Imię</th><th>Notatka</th><th>Nazwa pliku</th><th>Kolory</th><th>Nazwa na DC</th></tr>");
 
 foreach($prints as $print){
     echo("<tr>");
@@ -30,4 +30,9 @@ echo("</table>");
             }
         </style>
     </head>
+    <body>
+        <h5>Te dane i tak były by widoczne na discordzie!</h5>
+
+        <a href="index.html"> Powrót </a>
+    </body>
 </html>

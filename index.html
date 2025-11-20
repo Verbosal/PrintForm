@@ -33,10 +33,8 @@
                 <h3>Wyślij plik modelu 3D</h3>
                 <input type="file" multiple name="fname" id="fname">
 
-                <h4>Polecane formaty:</h4>
-
-                <h5>.stl, .step, .3mf</h5>
-                <h5>Ale akceptujemy wszystkie :D</h5>
+                <h4>Akceptujemy formaty:</h4>
+                <h5>.stl, .step, .3mf, .obj, .svg </h5>
                 <h5>(oczywiście plik musi zawierać prawidłowy model 3d!)</h5>
             </div>
         </div>
@@ -60,6 +58,11 @@
                 <h3>Trzeba cię rozpoznać!</h3>
                 <h3>Podaj salę i opcjonalnie imię.</h3>
                 <input type="text" style="resize: both;" placeholder="Grzegorz Brzęczyszczykiewicz sala 2137" name="sender" required>
+
+                <h3>Podaj nazwę na discord</h3>
+                <h4>Żebyśmy wiedzieli kogo informować o zakończeniu wydruku ;)</h4>
+                
+                <input type="text" style="resize: both;" placeholder="@pozdro70" name="dcname" required>
                 
                 <h3>I pozostaw opcjonalną notatkę :)</h3>
                 <input type="text" style="resize: both;" placeholder="Baza ma być czerwona..." name="note">
@@ -69,8 +72,10 @@
         <button id="subBtn" type="submit">Wyślij do druku!</button>
     </form>
     
-    <h3>WSZYSTKO co tu wpiszesz jest PUBLICZNIE widoczne, możesz zobaczyć liste aktualnie drukowanych wydruków tu:</h3>
-    <button style="width: fit-content"><a href="list.php">Zobacz wszystkie trwające druki</a></button>
+    <h3>Po zakończeniu druku zostaniesz spingowany na dc i proszony o odbiór.</h3>
+    <h3>Jak strona padnie to wysyłajcie druki na discorda hackaton 2025.</h3>
+    <h3>WSZYSTKO co tu wpiszesz jest PUBLICZNIE widoczne, możesz zobaczyć liste wydruków tu:</h3>
+    <button style="width: fit-content"><a href="list.php">Zobacz wszystkie druki</a></button>
 
     <h3>Fun fact ta strony chodzi na Raspberry pi, chodż spojrzeć i zawitać w sali 3 :P</h3>
 </body>
