@@ -2,41 +2,44 @@
 if(isset($_POST['sender'])){
     require_once 'database.php';
 
-    $target_dir = "pliki/";
+    $newFNAME = "";
+    if(!empty($_FILES['fname']['name'])){
+        $target_dir = "pliki/";
 
-    $pfinfo = pathinfo($_FILES["fname"]["name"]);
-    $newFNAME = $pfinfo['filename'] . '-' . rand() . '.' . $pfinfo['extension'];
+        $pfinfo = pathinfo($_FILES["fname"]["name"]);
+        $newFNAME = $pfinfo['filename'] . '-' . rand() . '.' . $pfinfo['extension'];
 
-    $target_file = $target_dir . basename($newFNAME);
-    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-    $uploadOk = 1;
+        $target_file = $target_dir . basename($newFNAME);
+        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+        $uploadOk = 1;
 
-    if (file_exists($target_file)) {
-        echo "Dej inną nazwe pliku bo taki już jest.";
-        $uploadOk = 0;
-        exit();
-    }
+        if (file_exists($target_file)) {
+            echo "Dej inną nazwe pliku bo taki już jest.";echo '<br> <a href="index.html"> Powrót </a>';
+            $uploadOk = 0;
+            exit();
+        }
 
-    if ($_FILES["fname"]["size"] > 500000) {
-        echo "Zaś za durzy plik, zuploaduj go na jakąś stronke typu mediaFire i wyślij link zamiast pliku.";
-        $uploadOk = 0;
-        exit();
-    }
+        if ($_FILES["fname"]["size"] > 500000) {
+            echo "Zaś za durzy plik, zuploaduj go na jakąś stronke typu mediaFire i wyślij link zamiast pliku.";echo '<br><a href="index.html"> Powrót </a>';
+            $uploadOk = 0;
+            exit();
+        }
 
-    if($imageFileType != "stl" && $imageFileType != "step" && $imageFileType != "3mf"
-    && $imageFileType != "obj" ) {
-        echo "Typ pliku sie nie zgadza";
-        $uploadOk = 0;
-        exit();
-    }
+        if($imageFileType != "stl" && $imageFileType != "step" && $imageFileType != "3mf"
+        && $imageFileType != "obj" ) {
+            echo "Typ pliku sie nie zgadza";echo '<br> <a href="index.html"> Powrót </a>';
+            $uploadOk = 0;
+            exit();
+        }
 
-    if ($uploadOk == 0) {
-        echo "Ełror!";
-    } else {
-        if (move_uploaded_file($_FILES["fname"]["tmp_name"], $target_file)) {
-            echo "Plik ". htmlspecialchars( basename( $_FILES["fname"]["name"])). " został zaplołdowany do druku";
+        if ($uploadOk == 0) {
+            echo "Ełror!";
         } else {
-            echo "jakiś błąd przy uploadzie spróbuj jeszcze raz";
+            if (move_uploaded_file($_FILES["fname"]["tmp_name"], $target_file)) {
+                echo "Plik ". htmlspecialchars( basename( $_FILES["fname"]["name"])). " został zaplołdowany do druku";
+            } else {
+                echo "jakiś błąd przy uploadzie spróbuj jeszcze raz";
+            }
         }
     }
 
@@ -48,12 +51,14 @@ if(isset($_POST['sender'])){
     //$query->bindValue(':colors',$_POST['???'],PDO::PARAM_STR); czekam jak zrobisz kolorki
     $query->bindValue(':colors',"none",PDO::PARAM_STR);
     $query->execute();
+    echo "Plik wysłany do druku <br>";
 }
 else{
     header("Location: index.html");
     exit();
 }
 
+echo '<a href="index.html"> Powrót </a>';
 ?>
 
 <html>
