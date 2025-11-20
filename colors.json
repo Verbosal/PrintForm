@@ -1,0 +1,13 @@
+{
+    "colors":[
+        {"display":"BRAK"},
+        {"display":"czerwony"},
+        {"display":"zielony"},
+        {"display":"niebieski"},
+        {"display":"pomarańczowy"},
+        {"display":"żółty"},
+        {"display":"fioletowy"},
+        {"display":"błękitny"},
+        {"display":"navy-blue"}
+    ]
+}

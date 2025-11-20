@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="pl">
-    
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <title>Formularz Druku 3D</title>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        option,select{
+            color:black;
+        }
+    </style>
 </head>
 
 <body class="background">
@@ -42,16 +49,52 @@
         <div class="modelContainerDiv">
             <div class="modelDiv">
                 <h3>Nie mamy wszystkich 256³ kolorów...</h3>
-                <h3>Oprócz tych!</h3>
+                <h3>Wybierz kolorki do druku!</h3>
+                <h5>W PRZYPADKU NIE WYBRANIA ŻADNYCH KOLORÓW, WYDRUKUJEMY LOSOWYM FILAMENTEM!</h5>
 
-                <fieldset class="colorPicker">
-                    <legend>Wybierz kolor(y) z jakich chcesz druk!</legend>
+                <?php
+                    echo '<label for="kolor1">kolor 1:</label>';
+                    echo '<select name="kolor1" id="kolor1">';
+                    $jsoncolors=json_decode(file_get_contents('colors.json'),true)["colors"];
+                    
+                    foreach($jsoncolors as $color){
+                        echo '<option value=' . $color["display"] . '>' . $color["display"] . '</option>';
+                    }
 
-                    <input type="checkbox" color="red">
-                    <input type="checkbox" color="green">
-                    <input type="checkbox" color="blue">
-                    <input type="checkbox" color="black">
-                </fieldset>
+                    echo '</select>';
+
+                    echo '<label for="kolor2">kolor 2:</label>';
+                    echo '<select name="kolor2" id="kolor2">';
+                    $jsoncolors=json_decode(file_get_contents('colors.json'),true)["colors"];
+                    
+                    foreach($jsoncolors as $color){
+                        echo '<option value=' . $color["display"] . '>' . $color["display"] . '</option>';
+                    }
+
+                    echo '</select>';
+
+                    echo '<label for="kolor3">kolor 3:</label>';
+                    echo '<select name="kolor3" id="kolor3">';
+                    $jsoncolors=json_decode(file_get_contents('colors.json'),true)["colors"];
+                    
+                    foreach($jsoncolors as $color){
+                        echo '<option value=' . $color["display"] . '>' . $color["display"] . '</option>';
+                    }
+
+                    echo '</select>';
+
+                    echo '<label for="kolor4">kolor 4:</label>';
+                    echo '<select name="kolor4" id="kolor4">';
+                    $jsoncolors=json_decode(file_get_contents('colors.json'),true)["colors"];
+                    
+                    foreach($jsoncolors as $color){
+                        echo '<option value=' . $color["display"] . '>' . $color["display"] . '</option>';
+                    }
+
+                    echo '</select>';
+                ?>
+
+
             </div>
 
             <div class="modelDiv">
