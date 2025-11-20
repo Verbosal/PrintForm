@@ -19,13 +19,15 @@ foreach($prints as $print){
 echo("</table>");
 ?>
 <html>
-    <style>
-        table, th, td {
-        border: 1px solid white;
-        border-collapse: collapse;
-        }
-        th, td {
-        background-color: #c5e6e6ff;
-        }
-    </style>
+    <head>
+        <style>
+            table, th, td {
+            border: 1px solid white;
+            border-collapse: collapse;
+            }
+            th, td {
+            background-color: #c5e6e6ff;
+            }
+        </style>
+    </head>
 </html>

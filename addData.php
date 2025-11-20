@@ -5,20 +5,20 @@ if(isset($_POST['sender'])){
     $target_dir = "pliki/";
 
     $pfinfo = pathinfo($_FILES["fname"]["name"]);
-    $newFNAME = $pfinfo['filename'] . rand() . '.' . $pfinfo['extension'];
+    $newFNAME = $pfinfo['filename'] . '-' . rand() . '.' . $pfinfo['extension'];
 
     $target_file = $target_dir . basename($newFNAME);
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     $uploadOk = 1;
 
     if (file_exists($target_file)) {
-        echo "Sorry, file already exists.";
+        echo "Dej inną nazwe pliku bo taki już jest.";
         $uploadOk = 0;
         exit();
     }
 
     if ($_FILES["fname"]["size"] > 500000) {
-        echo "Sorry, your file is too large.";
+        echo "Zaś za durzy plik, zuploaduj go na jakąś stronke typu mediaFire i wyślij link zamiast pliku.";
         $uploadOk = 0;
         exit();
     }
