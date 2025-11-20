@@ -58,7 +58,7 @@ body * {
     justify-content:center;
 }
 
-input, button {
+input {
     margin-top: 25px;
 }
 
@@ -205,4 +205,3 @@ button:hover {
 .modelDiv, button {
     backdrop-filter: blur(5px) brightness(2) hue-rotate(45deg);
 }
-
